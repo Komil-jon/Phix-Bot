@@ -14,7 +14,10 @@ REACTIONS = ['👍', '🔥', '❤️', '👏', '🕊']
 
 app = Flask(__name__, template_folder='.')
 
-
+@app.route('/activate', methods=['GET'])
+def activate():
+    return "Activation successful!", 200
+    
 @app.route('/', methods=['GET', 'POST', 'HEAD'])
 def index():
     parameters = request.args.get('tgWebAppData')
